@@ -1,103 +1,155 @@
-.home {
+header {
+  width: 100%;
+  border-bottom: 2px dashed @navigation-border;
+  color: @shark;
+  margin-top: 30px;
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  header {
-    padding: 90px 0 10px;
-    border-bottom: 2px dashed @navigation-border;
+  @media @mobile {
+   padding-bottom: 10px;
+  }
 
-      img {
-        max-width: 100%;
-        height: auto;
-      }
-  
-        h1 {
-          margin-top: 20px;
-        }
+  .navDiv {
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media @mobile {
+      flex-direction: column;
+      align-items: space-between;
+
+    }
   }
 }
 
-.content-section {
-  margin: 30px 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;  
+.home {
+  .funBusSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 
+    @media @mobile {
+     width: 90%; 
+     margin: 0 5%;
+    }
+
+    .welcomeDiv {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 20px 0;
+      border-bottom: 2px dashed @navigation-border;
+    }
+  }
+
+  .content-section {
+    margin: 30px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media @mobile {
+      flex-direction: column;
+      flex-wrap: nowrap;
+     }
+    
     .text-content {
       width: 48%;
-      padding-right: 1%; 
+      padding-right: 1%;
 
-        @media @mobile {
-          width: 100%;
-          padding: 0;
-        }
-        
-          .img-content {
-            width: 48%;
-            padding-left: 1%;
+      @media @mobile {
+        width: 90%; 
+        margin: 0 5%;
+       }
+    }
 
-              img {
-                border-radius: 10px;
-              }
-          }        
-    } 
-}
+    .img-content {
+      width: 48%;
+      padding-left: 1%;
 
-.inverse-content {
-  padding-bottom: 30px;
-  border-bottom: 2px dashed @navigation-border;
-  
+      @media @mobile {
+        width: 90%; 
+        margin: 0 5%;
+       }
+
+      img {
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .inverse-content {
+    padding-bottom: 30px;
+    border-bottom: 2px dashed @navigation-border;
+
+    @media @mobile {
+      flex-direction: column-reverse;
+     }
+
     .text-content {
       padding-left: 1%;
       padding-right: 0;
+    }
+
+    .img-content {
+      padding-right: 1%;
+      padding-left: 0;
 
       @media @mobile {
-        order: 1;
-      }
+        width: 90%; 
+        margin: 0 5%;
+       }
     }
-
-        .img-content {
-          padding-right: 1%;
-          padding-left: 0;
-
-          @media @mobile {
-            order: 2;
-          }
-        }
-}
-
-.content-destination {
-  width: 75%;
-  margin: 0 auto 30px;
-
-  @media @mobile {
-    width: 100%;
   }
 
-  img {
-    border-radius: 10px;
-  }
-}
-
-.content-pick {
-  padding-top: 30px;
-  border-top: 2px dashed @navigation-border;
-  display: flex;
-  justify-content: space-between;
-
-  @media @mobile {
-    flex-wrap: wrap;
-  }
-
-  .destination {
-    width: 30%;
-    margin-bottom: 30px;
+  .content-destination {
+    width: 75%;
+    margin: 0 auto 30px;
 
     @media @mobile {
-      width: 80%;
-      margin: 0 auto 30px;
+      width: 90%; 
+      margin: 0 5%;
+     }
+
+    img {
+      border-radius: 10px;
+
+      @media @mobile {
+        width: 100%
+       }
     }
+  }
+
+  .content-pick {
+    padding-top: 30px;
+    border-top: 2px dashed @navigation-border;
+    display: flex;
+    justify-content: space-between;
     
-    .btn {
-      .button-creator(200px, 45px, @button-bg, @white, 1.8rem);     
+    @media @mobile {
+      width: 90%; 
+      margin: 0 5%;
+      padding-left: 20px;
+      flex-direction: column;
+     }
+
+    .destination {
+      width: 30%;
+      margin-bottom: 30px;
+
+      @media @mobile {
+        width: 90%; 
+        margin: 0 5%;
+       }
+       
+      .btn {
+        .button(@eastern-blue, white);
+      }
+  
     }
   }
 }
